@@ -1,0 +1,42 @@
+{
+    "name": "nscps/union-find",
+    "description": "Some implementations of Union-Find.",
+    "type": "library",
+    "keywords": ["php", "data-structure", "union-find", "quick-find", "quick-union"],
+    "homepage": "https://github.com/nscps/union-find",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "NSCPS Solutions",
+            "email": "nscpssolutions@gmail.com"
+        },
+        {
+            "name": "Nilo Soares",
+            "email": "nilosoares@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nscps\\UnionFind\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nscps\\UnionFind\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "tests": [
+            "vendor/bin/phpunit"
+        ],
+        "coverage": [
+            "vendor/bin/phpunit --coverage-html=coverage"
+        ]
+    }
+}
