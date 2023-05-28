@@ -93,7 +93,7 @@ class QuickUnion implements Countable, QuickUnionInterface
     {
         $this->assertElementExists($p);
 
-        foreach ($this->descendents($p) as $descendent) {
+        foreach ($this->getDescendents($p) as $descendent) {
             unset($this->union_find[$descendent]);
         }
 
@@ -107,7 +107,7 @@ class QuickUnion implements Countable, QuickUnionInterface
      * @param string $p
      * @return string[]
      */
-    protected function descendents(string $p): array
+    protected function getDescendents(string $p): array
     {
         $descendents = [];
 
