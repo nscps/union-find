@@ -77,7 +77,7 @@ class QuickUnion implements Countable, QuickUnionInterface
     /**
      * @inheritDoc
      */
-    public function find(string $p, string $q): bool
+    public function areConnected(string $p, string $q): bool
     {
         $this->assertElementExists($p);
         $this->assertElementExists($q);

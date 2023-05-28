@@ -84,9 +84,9 @@ class QuickUnionTest extends TestCase
         $this->assertSame('A', $union->root('A'));
         $this->assertSame('B', $union->root('B'));
 
-        $this->assertTrue($union->find('A', 'A'));
-        $this->assertTrue($union->find('B', 'B'));
-        $this->assertFalse($union->find('A', 'B'));
+        $this->assertTrue($union->areConnected('A', 'A'));
+        $this->assertTrue($union->areConnected('B', 'B'));
+        $this->assertFalse($union->areConnected('A', 'B'));
     }
 
     /**

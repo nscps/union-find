@@ -35,12 +35,12 @@ interface QuickUnionInterface
     public function unite(string $p, string $q): QuickUnionInterface;
 
     /**
-     * Check if two elements have the same root.
+     * Check if two elements are connected.
      * @param string $p
      * @param string $q
      * @return bool
      */
-    public function find(string $p, string $q): bool;
+    public function areConnected(string $p, string $q): bool;
 
     /**
      * Remove a given element and all its descendents from the union.
