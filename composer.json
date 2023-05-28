@@ -1,6 +1,6 @@
 {
     "name": "nscps/union-find",
-    "description": "Some implementations of Union-Find.",
+    "description": "Some implementations of the disjoint-set data structure.",
     "type": "library",
     "keywords": ["php", "data-structure", "union-find", "quick-find", "quick-union"],
     "homepage": "https://github.com/nscps/union-find",
