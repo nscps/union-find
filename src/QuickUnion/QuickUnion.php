@@ -107,7 +107,7 @@ class QuickUnion implements Countable, QuickUnionInterface
      * @param string $p
      * @return string[]
      */
-    private function descendents(string $p): array
+    protected function descendents(string $p): array
     {
         $descendents = [];
 
