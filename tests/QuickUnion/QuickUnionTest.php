@@ -82,8 +82,8 @@ class QuickUnionTest extends TestCase
         $union->add('A');
         $union->add('B');
 
-        $this->assertSame('A', $union->root('A'));
-        $this->assertSame('B', $union->root('B'));
+        $this->assertSame('A', $union->getRoot('A'));
+        $this->assertSame('B', $union->getRoot('B'));
 
         $this->assertTrue($union->areConnected('A', 'A'));
         $this->assertTrue($union->areConnected('B', 'B'));
@@ -100,7 +100,7 @@ class QuickUnionTest extends TestCase
         $union = new QuickUnion();
 
         $union->add('A');
-        $union->root('B');
+        $union->getRoot('B');
     }
 
     /**
@@ -116,9 +116,9 @@ class QuickUnionTest extends TestCase
 
         $union->unite('A', 'B');
 
-        $this->assertSame('B', $union->root('A'));
-        $this->assertSame('B', $union->root('B'));
-        $this->assertSame('C', $union->root('C'));
+        $this->assertSame('B', $union->getRoot('A'));
+        $this->assertSame('B', $union->getRoot('B'));
+        $this->assertSame('C', $union->getRoot('C'));
     }
 
     /**
@@ -138,20 +138,20 @@ class QuickUnionTest extends TestCase
         $union->unite('A', 'B');
         $union->unite('C', 'D');
 
-        $this->assertSame('B', $union->root('A'));
-        $this->assertSame('B', $union->root('B'));
-        $this->assertSame('D', $union->root('C'));
-        $this->assertSame('D', $union->root('D'));
-        $this->assertSame('E', $union->root('E'));
+        $this->assertSame('B', $union->getRoot('A'));
+        $this->assertSame('B', $union->getRoot('B'));
+        $this->assertSame('D', $union->getRoot('C'));
+        $this->assertSame('D', $union->getRoot('D'));
+        $this->assertSame('E', $union->getRoot('E'));
 
         // A->B->D, C->D
         $union->unite('A', 'C');
 
-        $this->assertSame('D', $union->root('A'));
-        $this->assertSame('D', $union->root('B'));
-        $this->assertSame('D', $union->root('C'));
-        $this->assertSame('D', $union->root('D'));
-        $this->assertSame('E', $union->root('E'));
+        $this->assertSame('D', $union->getRoot('A'));
+        $this->assertSame('D', $union->getRoot('B'));
+        $this->assertSame('D', $union->getRoot('C'));
+        $this->assertSame('D', $union->getRoot('D'));
+        $this->assertSame('E', $union->getRoot('E'));
     }
 
     /**

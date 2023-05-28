@@ -40,7 +40,7 @@ class QuickUnion implements Countable, QuickUnionInterface
     /**
      * @inheritDoc
      */
-    public function root(string $p): string
+    public function getRoot(string $p): string
     {
         $this->assertElementExists($p);
 
@@ -67,8 +67,8 @@ class QuickUnion implements Countable, QuickUnionInterface
         $this->assertElementExists($p);
         $this->assertElementExists($q);
 
-        $i = $this->root($p);
-        $j = $this->root($q);
+        $i = $this->getRoot($p);
+        $j = $this->getRoot($q);
 
         $this->union_find[$i] = $j;
 
@@ -83,7 +83,7 @@ class QuickUnion implements Countable, QuickUnionInterface
         $this->assertElementExists($p);
         $this->assertElementExists($q);
 
-        return $this->root($p) === $this->root($q);
+        return $this->getRoot($p) === $this->getRoot($q);
     }
 
     /**

@@ -24,7 +24,7 @@ interface QuickUnionInterface
      * @param string $p
      * @return string
      */
-    public function root(string $p): string;
+    public function getRoot(string $p): string;
 
     /**
      * Unite two given elements. The root of "q" will be the root of "p".
