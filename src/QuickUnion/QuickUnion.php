@@ -3,7 +3,8 @@
 namespace Nscps\UnionFind\QuickUnion;
 
 use Countable;
-use InvalidArgumentException;
+use Nscps\UnionFind\Exception\DuplicateElementException;
+use Nscps\UnionFind\Exception\ElementNotFoundException;
 use SplQueue;
 
 class QuickUnion implements Countable, QuickUnionInterface
@@ -139,14 +140,14 @@ class QuickUnion implements Countable, QuickUnionInterface
     private function assertElementExists(string $p): void
     {
         if (!$this->has($p)) {
-            throw new InvalidArgumentException(sprintf('Element "%s" was not added.', $p));
+            throw new ElementNotFoundException($p);
         }
     }
 
     private function assertElementNotExists(string $p): void
     {
         if ($this->has($p)) {
-            throw new InvalidArgumentException(sprintf('Element "%s" was already added.', $p));
+            throw new DuplicateElementException($p);
         }
     }
 

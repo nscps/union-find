@@ -2,7 +2,8 @@
 
 namespace Nscps\UnionFind\Tests\QuickUnion;
 
-use InvalidArgumentException;
+use Nscps\UnionFind\Exception\DuplicateElementException;
+use Nscps\UnionFind\Exception\ElementNotFoundException;
 use Nscps\UnionFind\QuickUnion\QuickUnion;
 use PHPUnit\Framework\TestCase;
 
@@ -39,7 +40,7 @@ class QuickUnionTest extends TestCase
      */
     public function shouldThrowExceptionWhenConstructorArgumentHasDuplicateElement(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(DuplicateElementException::class);
 
         new QuickUnion(['A', 'A', 'B']);
     }
@@ -63,7 +64,7 @@ class QuickUnionTest extends TestCase
      */
     public function shouldThrowExceptionWhenAddingDuplicateElement(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(DuplicateElementException::class);
 
         $union = new QuickUnion();
 
@@ -94,7 +95,7 @@ class QuickUnionTest extends TestCase
      */
     public function shouldThrowExceptionWhenGettingRootOfMissingElement(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(ElementNotFoundException::class);
 
         $union = new QuickUnion();
 
@@ -158,7 +159,7 @@ class QuickUnionTest extends TestCase
      */
     public function shouldThrowExceptionWhenUnitingMissingElements(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(ElementNotFoundException::class);
 
         $union = new QuickUnion();
 
@@ -238,7 +239,7 @@ class QuickUnionTest extends TestCase
      */
     public function shouldThrowExceptionWhenRemovingMissingElement(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(ElementNotFoundException::class);
 
         $union = new QuickUnion();
 
