@@ -1,8 +1,8 @@
 <?php
 
-namespace Nscps\UnionFind\QuickUnion;
+namespace Nscps\UnionFind;
 
-interface QuickUnionInterface
+interface UnionFindInterface
 {
 
     /**
@@ -10,7 +10,7 @@ interface QuickUnionInterface
      * @param string $p
      * @return $this
      */
-    public function add(string $p): QuickUnionInterface;
+    public function add(string $p): UnionFindInterface;
 
     /**
      * Check if a given element exists.
@@ -32,7 +32,7 @@ interface QuickUnionInterface
      * @param string $q
      * @return $this
      */
-    public function unite(string $p, string $q): QuickUnionInterface;
+    public function unite(string $p, string $q): UnionFindInterface;
 
     /**
      * Check if two elements are connected.
@@ -47,6 +47,6 @@ interface QuickUnionInterface
      * @param string $p
      * @return $this
      */
-    public function remove(string $p): QuickUnionInterface;
+    public function remove(string $p): UnionFindInterface;
 
 }
